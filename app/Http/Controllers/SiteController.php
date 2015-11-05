@@ -46,7 +46,7 @@ class SiteController extends Controller
     {
         $site = Site::findOrFail($site_id);
         $site->update($request->all());
-        
+
         return redirect()->route('sites.edit', $site->id);
     }
 }
