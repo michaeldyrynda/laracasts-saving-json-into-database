@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+get('/sites', [ 'as' => 'sites.index', 'uses' => 'SiteController@index', ]);
+post('/sites', [ 'as' => 'sites.store', 'uses' => 'SiteController@store', ]);
+get('/sites/create', [ 'as' => 'sites.create', 'uses' => 'SiteController@create', ]);
+put('/sites/{id}', [ 'as' => 'sites.update', 'uses' => 'SiteController@update', ]);
+get('/sites/{id}/edit', [ 'as' => 'sites.edit', 'uses' => 'SiteController@edit', ]);
