@@ -45,10 +45,8 @@ class SiteController extends Controller
     public function update(Request $request, $site_id)
     {
         $site = Site::findOrFail($site_id);
-        $site->features = ! empty($request->features) ? $request->features : null;
-        $site->update($request->except('features'));
-
-
+        $site->update($request->all());
+        
         return redirect()->route('sites.edit', $site->id);
     }
 }
